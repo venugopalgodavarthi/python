@@ -1,0 +1,1504 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Camino 1.10.3 ExecHandler configuration file -->
+<ls_config>
+<!-- ===================================== -->
+  <!-- OS Def section                        -->
+  <!-- ===================================== -->
+  <!-- In case of questions, please contact:
+       the distribution list: DL-dfcmadm
+  -->
+  <os_def>
+    <group name="DEFAULT_OS">
+      <member>LINUX</member>
+    </group>
+    <group name="LINUX">
+      <member>LINUX60</member>
+      <member>LINUX70</member>
+    </group>
+    <group name="LINUX60">
+      <member>LINUX60_64</member>
+    </group>
+    <entry name="LINUX60_64">
+      <type lsys="LSF">X64LIN</type>
+      <version>60</version>
+      <bits>32</bits>
+      <bits>64</bits>
+    </entry>
+    <group name="LINUX70">
+      <member>LINUX70_64</member>
+    </group>
+    <entry name="LINUX70_64">
+      <type lsys="LSF">X64LIN</type>
+      <version>70</version>
+      <bits>32</bits>
+      <bits>64</bits>
+    </entry>
+	<group name="LINUX80">
+      <member>LINUX80_64</member>
+    </group>
+	<entry name="LINUX80_64">
+      <type lsys="LSF">X64LIN</type>
+      <version>80</version>
+      <bits>32</bits>
+      <bits>64</bits>
+    </entry>
+  </os_def>
+  <!-- ===================================== -->
+  <!-- Job Def section                       -->
+  <!-- ===================================== -->
+  <job_def>
+    <entry name="ACS">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TMPSPACE">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="ACS_64bit">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TMPSPACE">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="ADEXL">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="ADS">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">INWAY_ADS</option>
+    </entry>
+    <entry name="ADS_MCM_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+    </entry>
+    <entry name="ADS_SIM">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="ADVANCE_MS">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="AMSVER">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="RUN_OS">
+        <member>LINUX70</member>
+      </option>
+    </entry>
+    <entry name="AMS_DESIGNER_BATCH">
+      <option name="PRE_EXEC_SCRIPT">
+        <member>source /opt/site/share/camino/pre_exec_scripts/irunopts_check.bash</member>
+      </option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="AMS_DESIGNER_INTERACTIVE">
+      <option name="PRE_EXEC_SCRIPT">
+        <member>source /opt/site/share/camino/pre_exec_scripts/irunopts_check.bash</member>
+      </option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="AMS_DESIGNER_UTILS">
+      <option name="PRE_EXEC_SCRIPT">
+        <member>source /opt/site/share/camino/pre_exec_scripts/irunopts_check.bash</member>
+      </option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+	<entry name="AMS_REGRESSION">
+      <option name="PRE_EXEC_SCRIPT">
+        <member>source /opt/site/share/camino/pre_exec_scripts/irunopts_check.bash</member>
+      </option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="UI">AMS_DESIGNER_BATCH</option>
+      <option name="ADD_OPTS_LSF">um=background</option>
+    </entry>
+    <entry name="ANALOGINSYDES">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="RAM">500</option>
+    </entry>
+    <entry name="ANALOGRESIMULATION">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="RAM">500</option>
+    </entry>
+    <entry name="ANSOFT">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="TMPSPACE">500</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="ANSYS">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">5000</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="ANSYSEDT_GUI">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RESERVE_RAM">32768</option>
+      <option name="RUN_OS">
+        <member>LINUX60</member>
+        <member>LINUX70</member>
+      </option>
+    </entry>
+    <entry name="ANSYSEDT_SOLVER">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RESERVE_RAM">65536</option>
+      <option name="RUN_OS">
+        <member>LINUX60</member>
+        <member>LINUX70</member>
+      </option>
+      <option name="NCPU">16</option>
+      <option name="SPAN">8</option>
+    </entry>
+    <entry name="ANSYS_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">5000</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="ANSYSEDT_GUI_SSR">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">ssr</option>
+      <option name="RESERVE_RAM">32768</option>
+    </entry>
+    <entry name="ANSYSEDT_SOLVER_SSR">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">ssr</option>
+      <option name="RESERVE_RAM">65536</option>
+      <option name="NCPU">16</option>
+      <option name="SPAN">8</option>
+    </entry>
+    <entry name="APACHE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">CAMINO_APACHE</option>
+      <option name="AGGREGATE">CAMINO_APACHE</option>
+    </entry>
+    <entry name="APACHE_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">CAMINO_APACHE</option>
+      <option name="AGGREGATE">CAMINO_APACHE</option>
+    </entry>
+    <entry name="APACHE_PROFILE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">CAMINO_APACHE</option>
+      <option name="AGGREGATE">CAMINO_APACHE</option>
+    </entry>
+    <entry name="APD">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="RAM">10000</option>
+      <option name="TOOL_ID">INWAY_APD</option>
+      <option name="AGGREGATE">INWAY_APD</option>
+    </entry>
+    <entry name="ASSURA">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">INWAY_ASSURA</option>
+      <option name="AGGREGATE">INWAY_ASSURA</option>
+    </entry>
+    <entry name="ASSURAV">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">INWAY_ASSURAV</option>
+      <option name="AGGREGATE">INWAY_ASSURAV</option>
+    </entry>
+    <entry name="ASTRO">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">INWAY_ASTRO</option>
+      <option name="AGGREGATE">INWAY_ASTRO</option>
+    </entry>
+    <entry name="AVENUE_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="AVENUE_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="AcroRead">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">100</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="BCE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="RAM">1000</option>
+    </entry>
+    <entry name="BCE_LINUX">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="RAM">1000</option>
+    </entry>
+    <entry name="BLASTCREATE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="BLASTCREATE_64bit">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="BLASTCREATE_64bit_I">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="BLASTCREATE_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="BLASTFUSION">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="BLASTFUSION_64bit">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">8000</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="BLASTFUSION_64bit_I">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="BLASTFUSION_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="BLASTPLANPRO">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="BLASTPLANPRO_64bit">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="BLASTPLANPRO_64bit_I">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="BLASTPLANPRO_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="BONDPLANNER">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="BONDTOOL">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="CADENCE_ADE_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="ADD_OPTS_LSF">-o /dev/null -e /dev/null</option>
+    </entry>
+    <entry name="CADENCE_CSBR">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="CADENCE_VIRTUOSO_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="CADENCE_VIRTUOSO_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">&quot;layout batch&quot;</option>
+      <option name="TMPSPACE">1000</option>
+    </entry>
+    <entry name="CADENCE_UTILITIES_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="CADENCE_UTILITIES_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">&quot;layout batch&quot;</option>
+      <option name="TMPSPACE">1000</option>
+    </entry>
+    <entry name="CADENCE_VIVA_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">&quot;layout batch&quot;</option>
+      <option name="TMPSPACE">1000</option>
+    </entry>
+    <entry name="CADENCE_SI_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="CADENCE_IHDL_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="CADENCE_XSTREAM_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="CADENCE_OCEAN_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="CADENCE_ABSTRACT_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="CADENCE_ABSTRACT_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">&quot;layout batch&quot;</option>
+      <option name="TMPSPACE">1000</option>
+    </entry>
+    <entry name="CADENCE_VSDE_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="CADENCE_VSDE_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="CALIBRE">
+      <option name="LICENSE">
+        <member>LIC_calibrehlvs=1</member>
+        <member>LIC_calibredrc=1</member>
+        <member>LIC_calibrehdrc=1</member>
+        <member>LIC_calibrelvs=1</member>
+      </option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="SPAN">0</option>
+    </entry>
+    <entry name="CALIBRE_64bit">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="SPAN">0</option>
+    </entry>
+    <entry name="CALIBRE_ESDNET">
+      <option name="LICENSE">
+        <member>LIC_calibrehlvs=1</member>
+        <member>LIC_calibredrc=1</member>
+        <member>LIC_calibrehdrc=1</member>
+        <member>LIC_calibrelvs=1</member>
+      </option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="SPAN">0</option>
+    </entry>
+    <entry name="CERTITUDE">
+      <option name="LICENSE">
+        <member>LIC_certitude=1</member>
+      </option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="CERTITUDE_OPTIMIZER">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="UI">certitude</option>
+    </entry>
+    <entry name="CONFIG_CORNERSET">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="RESERVE_RAM">10000</option>
+      <option name="DEFAULT_DISPATCH_OPT">LS_INTERACTIVE</option>
+    </entry>
+    <entry name="CVE_32">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="CVE_64">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="DCMAKE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TMPSPACE">50</option>
+      <option name="LS_PROJNAME">DCMAKE</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="DEFAULT">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="DVT">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="UI">eclipse</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="DV_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TMPSPACE">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="DocExe">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">1</option>
+    </entry>
+    <entry name="EIOP">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">INWAY_EIOP</option>
+      <option name="AGGREGATE">INWAY_EIOP</option>
+    </entry>
+    <entry name="ELTIC">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="EMIRECEIVER">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="EMX">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">8000</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="ENCOUNTER">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">5000</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="FCV">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">fcv</option>
+    </entry>
+    <entry name="FPMBIST">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="FireFox">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="RUN_OS">
+        <member>LINUX70</member>
+      </option>
+    </entry>
+    <entry name="FusionCompiler">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TOOL_ID">FusionCompiler</option>
+      <option name="AGGREGATE">FusionCompiler</option>
+      <option name="UI">FusionCompiler</option>
+      <option name="NCPU">8</option>
+      <option name="RESERVE_RAM">10000</option>
+    </entry>
+    <entry name="GENUS">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TOOL_ID">GENUS</option>
+      <option name="AGGREGATE">GENUS</option>
+      <option name="UI">GENUS</option>
+      <option name="NCPU">4</option>
+      <option name="RESERVE_RAM">16000</option>
+    </entry>
+    <entry name="GOLDENGATE">
+      <option name="LS_SYSTEM">LSF</option>
+    </entry>
+    <entry name="GATEVISION">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="GATEVISION_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="HDAEXE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="RESERVE_RAM">10000</option>
+    </entry>
+    <entry name="ICC">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="SPAN">0</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">INWAY_ICC</option>
+      <option name="AGGREGATE">INWAY_ICC</option>
+    </entry>
+    <entry name="ICC2">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TOOL_ID">ICC2</option>
+      <option name="AGGREGATE">ICC2</option>
+      <option name="UI">ICC2</option>
+      <option name="NCPU">8</option>
+      <option name="RESERVE_RAM">10000</option>
+      <option name="LICENSE">
+        <member>LIC_iccompiler8=1</member>
+      </option>
+    </entry>
+    <entry name="ICC2_BATCH_16">
+      <option name="TOOL_ID">ICC2</option>
+      <option name="AGGREGATE">ICC2</option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="UI">ICC2</option>
+      <option name="NCPU">16</option>
+      <option name="RESERVE_RAM">10000</option>
+      <option name="LICENSE">
+        <member>LIC_iccompiler8=1</member>
+      </option>
+    </entry>
+    <entry name="ICC2_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TOOL_ID">ICC2</option>
+      <option name="AGGREGATE">ICC2</option>
+      <option name="UI">ICC2_INTERACTIVE</option>
+      <option name="NCPU">8</option>
+      <option name="RESERVE_RAM">10000</option>
+      <option name="LICENSE">
+        <member>LIC_iccompiler8=1</member>
+      </option>
+    </entry>
+    <entry name="ICC2_INTERACTIVE_16">
+      <option name="TOOL_ID">ICC2</option>
+      <option name="AGGREGATE">ICC2</option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="UI">ICC2_INTERACTIVE</option>
+      <option name="NCPU">16</option>
+      <option name="RESERVE_RAM">10000</option>
+      <option name="LICENSE">
+        <member>LIC_iccompiler8=1</member>
+      </option>
+    </entry>
+    <entry name="ICC_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="SPAN">0</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">INWAY_ICC</option>
+      <option name="AGGREGATE">INWAY_ICC</option>
+    </entry>
+    <entry name="IDEM">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="NCPU">2</option>
+    </entry>
+    <entry name="IFXDPR">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="IFX_LC">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TMPSPACE">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="INDAGO">
+      <option name="LS_SYSTEM">LSF</option>
+    </entry>
+    <entry name="INFILTEON_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="INICIO_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="INICIO_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="INNOVUS">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TOOL_ID">INNOVUS</option>
+      <option name="AGGREGATE">INNOVUS</option>
+      <option name="UI">INNOVUS</option>
+      <option name="NCPU">4</option>
+      <option name="RESERVE_RAM">8000</option>
+    </entry>
+    <entry  name="INNOVUS_INTERACTIVE">
+ 	<option name="LS_SYSTEM">LSF</option>
+  	<option name="TOOL_ID">INNOVUS</option>
+  	<option name="AGGREGATE">INNOVUS</option>
+  	<option name="UI">INNOVUS_INTERACTIVE</option>
+  	<option name="NCPU">8</option>
+    </entry>
+    <entry name="IWDC">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TMPSPACE">50</option>
+      <option name="RAM">10000</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="IWDC_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TMPSPACE">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="IWSYN">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TMPSPACE">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="IWSYN_64bit">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TMPSPACE">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="IWSYN_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TMPSPACE">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="IWSYN_INTERACTIVE_64bit">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TMPSPACE">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="JASPER_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="JASPER_GUI">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="KLAYOUT_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">&quot;layout batch&quot;</option>
+    </entry>
+    <entry name="LEC">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="LEC_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="LSFIW">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="MACROPREP_DEFAULT">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="MBIST">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_mbistarchitect=1</member>
+      </option>
+    </entry>
+    <entry name="MELIDIM_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">MELIDIM</option>
+    </entry>
+    <entry name="MODELSIM">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_qhsimvh=1</member>
+        <member>LIC_qhsimvl=1</member>
+        <member>LIC_msimhdlsim=1</member>
+        <member>LIC_msimhdlmix=1</member>
+      </option>
+    </entry>
+    <entry name="MODELSIM_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_qhsimvh=1</member>
+        <member>LIC_qhsimvl=1</member>
+        <member>LIC_msimhdlsim=1</member>
+        <member>LIC_msimhdlmix=1</member>
+      </option>
+    </entry>
+    <entry name="MODELSIM_SOLARIS">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_ModelsimAny=1</member>
+      </option>
+    </entry>
+    <entry name="MOMENTUM">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">8000</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="MVRC">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="MVRC_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="NANOSIM">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">INWAY_NANOSIM</option>
+      <option name="AGGREGATE">INWAY_NANOSIM</option>
+    </entry>
+    <entry name="NANOSIM_64">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">INWAY_NANOSIM</option>
+      <option name="AGGREGATE">INWAY_NANOSIM</option>
+    </entry>
+    <entry name="NCSIM">
+      <option name="LICENSE">
+        <member>LIC_ncsim=1</member>
+      </option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="NCSIM_BATCH">
+      <option name="PRE_EXEC_SCRIPT">
+        <member>source /opt/site/share/camino/pre_exec_scripts/irunopts_check.bash</member>
+      </option>
+      <option name="LICENSE">
+        <member>LIC_ncsim=1</member>
+      </option>
+      <option name="RUN_OS">
+       <member>LINUX70</member>
+      </option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="NCSIM_COMPILE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="NCSIM_ELABORATE">
+      <option name="PRE_EXEC_SCRIPT">
+        <member>source /opt/site/share/camino/pre_exec_scripts/irunopts_check.bash</member>
+      </option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="ONESPIN">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="ONESPIN_EC">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="ONESPIN_MV">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+	<entry name="PROJECT_ENTRY">
+  	  <option name="RUN_OS">
+       <member>LINUX70</member>
+      </option>
+    </entry>
+    <entry name="PRIMETIME">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">INWAY_PRIMETIME</option>
+      <option name="AGGREGATE">INWAY_PRIMETIME</option>
+      <option name="NCPU">4</option>
+      <option name="LICENSE">
+        <member>LIC_PrimeTime=1</member>
+      </option>
+    </entry>
+    <entry name="PRIMETIME_MASTER">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">INWAY_PRIMETIME</option>
+      <option name="AGGREGATE">INWAY_PRIMETIME</option>
+      <option name="LICENSE">
+        <member>LIC_PrimeTime=1</member>
+      </option>
+    </entry>
+    <entry name="PRIMETIME_PX">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">INWAY_PRIMETIME</option>
+      <option name="AGGREGATE">INWAY_PRIMETIME</option>
+      <option name="LICENSE">
+        <member>LIC_PrimeTime=1</member>
+	<member>LIC_PrimeTime_PX=1</member>
+      </option>
+    </entry>
+    <entry name="PRIMETIME_MASTER_PX">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">INWAY_PRIMETIME</option>
+      <option name="AGGREGATE">INWAY_PRIMETIME</option>
+      <option name="LICENSE">
+        <member>LIC_PrimeTime=1</member>
+	<member>LIC_PrimeTime_PX=1</member>
+      </option>
+    </entry>
+    <entry name="PRIMETIME_PX_SI">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">INWAY_PRIMETIME</option>
+      <option name="AGGREGATE">INWAY_PRIMETIME</option>
+      <option name="LICENSE">
+        <member>LIC_PrimeTime=1</member>
+	<member>LIC_PrimeTime_PX=1</member>
+	<member>LIC_PrimeTime_SI=1</member>
+      </option>
+    </entry>
+    <entry name="PRIMETIME_SI">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">INWAY_PRIMETIME</option>
+      <option name="AGGREGATE">INWAY_PRIMETIME</option>
+      <option name="LICENSE">
+        <member>LIC_PrimeTime=1</member>
+	<member>LIC_PrimeTime_SI=1</member>
+      </option>
+    </entry>
+    <entry name="PRIMETIME_MASTER_SI">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">INWAY_PRIMETIME</option>
+      <option name="AGGREGATE">INWAY_PRIMETIME</option>
+      <option name="LICENSE">
+        <member>LIC_PrimeTime=1</member>
+	<member>LIC_PrimeTime_SI=1</member>
+      </option>
+    </entry>
+    <entry name="PRIMETIME_SLAVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">INWAY_PRIMETIME</option>
+      <option name="AGGREGATE">INWAY_PRIMETIME</option>
+      <option name="NCPU">4</option>
+      <option name="LICENSE">
+        <member>LIC_PrimeTime=1</member>
+      </option>
+    </entry>
+    <entry name="PRIMETIME_SLAVE_PX">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">INWAY_PRIMETIME</option>
+      <option name="AGGREGATE">INWAY_PRIMETIME</option>
+      <option name="LICENSE">
+        <member>LIC_PrimeTime=1</member>
+	<member>LIC_PrimeTime_PX=1</member>
+      </option>
+    </entry>
+    <entry name="PRIMETIME_SLAVE_PX_SI">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">INWAY_PRIMETIME</option>
+      <option name="AGGREGATE">INWAY_PRIMETIME</option>
+        <member>LIC_PrimeTime=1</member>
+	<member>LIC_PrimeTime_PX=1</member>
+	<member>LIC_PrimeTime_SI=1</member>
+    </entry>
+    <entry name="PRIMETIME_SLAVE_SI">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">INWAY_PRIMETIME</option>
+      <option name="AGGREGATE">INWAY_PRIMETIME</option>
+      <option name="LICENSE">
+        <member>LIC_PrimeTime=1</member>
+	<member>LIC_PrimeTime_SI=1</member>
+      </option>
+    </entry>
+    <entry name="PWT_DEFAULT">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">800</option>
+      <option name="SWAP">200</option>
+      <option name="TMPSPACE">50</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="SDCCHECK">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="TMPSPACE">50</option>
+      <option name="LS_PROJNAME">SDC_CHECK</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="SIMPLEX_LARGE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">5000</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">INWAY_SIMPLEX</option>
+      <option name="AGGREGATE">INWAY_SIMPLEX</option>
+    </entry>
+    <entry name="SIMPLEX_SMALL">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">INWAY_SIMPLEX</option>
+      <option name="AGGREGATE">INWAY_SIMPLEX</option>
+    </entry>
+    <entry name="SIWAVE_GUI">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RESERVE_RAM">32768</option>
+      <option name="RUN_OS">
+        <member>LINUX60</member>
+        <member>LINUX70</member>
+      </option>
+      <option name="NCPU">8</option>
+    </entry>
+    <entry name="SIWAVE_SOLVER">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RESERVE_RAM">65536</option>
+      <option name="RUN_OS">
+        <member>LINUX60</member>
+        <member>LINUX70</member>
+      </option>
+      <option name="NCPU">16</option>
+      <option name="SPAN">8</option>
+    </entry>
+    <entry name="SIWAVE_GUI_SSR">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">ssr</option>
+      <option name="RESERVE_RAM">32768</option>
+      <option name="NCPU">8</option>
+    </entry>
+    <entry name="SIWAVE_SOLVER_SSR">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">ssr</option>
+      <option name="RESERVE_RAM">65536</option>
+      <option name="NCPU">16</option>
+      <option name="SPAN">8</option>
+    </entry>
+    <entry name="SOLIDO_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="SOLIDO_GUI">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="UI">SOLIDO</option>
+    </entry>
+    <entry name="SONNET">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">1000</option>
+      <option name="SWAP">50</option>
+    </entry>
+    <entry name="SPB">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">INWAY_SPB</option>
+      <option name="AGGREGATE">INWAY_SPB</option>
+    </entry>
+    <entry name="SPECMAN">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_SpecmanModelsim=1</member>
+      </option>
+    </entry>
+    <entry name="SPECMAN_SOLARIS">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_SpecmanModelsim=1</member>
+      </option>
+    </entry>
+    <entry name="SPECTRE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="SPECTRE_64bit">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="SPECTRE_64bit_DP">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="SPECTRE_DP">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="SPECTRE_REGRESSION">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="UI">spectre</option>
+      <option name="ADD_OPTS_LSF">um=background</option>
+    </entry>
+    <entry name="SPECTREX">
+      <option name="LS_SYSTEM">LSF</option>
+    </entry>
+    <entry name="SPYGLASS">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">1000</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_oemunlock=1</member>
+      </option>
+    </entry>
+    <entry name="SPYGLASS_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">1000</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_oemunlock=1</member>
+      </option>
+    </entry>
+    <entry name="STARXT">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">INWAY_STARXT</option>
+      <option name="AGGREGATE">INWAY_STARXT</option>
+    </entry>
+    <entry name="STARXT_64bit">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">INWAY_STARXT</option>
+      <option name="AGGREGATE">INWAY_STARXT</option>
+    </entry>
+    <entry name="STARVISION">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="STARVISION_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="TALUS">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="TALUS_BE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">TALUS_BE</option>
+      <option name="LICENSE">
+        <member>LIC_talusvortex=1</member>
+      </option>
+    </entry>
+    <entry name="TALUS_BE_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">TALUS_BE</option>
+      <option name="LICENSE">
+        <member>LIC_talusvortex=1</member>
+      </option>
+    </entry>
+    <entry name="TALUS_FE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">TALUS_FE</option>
+      <option name="LICENSE">
+        <member>LIC_talusdesign=1</member>
+      </option>
+    </entry>
+    <entry name="TALUS_FE_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">TALUS_FE</option>
+      <option name="LICENSE">
+        <member>LIC_talusdesign=1</member>
+      </option>
+    </entry>
+    <entry name="TALUS_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="TITAN">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_titan=1</member>
+      </option>
+    </entry>
+    <entry name="TMC">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="RAM">500</option>
+    </entry>
+    <entry name="TOPS_TOOL">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="TOPS_TPI_GEN_TOOL">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="ADD_OPTS_LSF">-o $HOME/.lsbatch/callout%J</option>
+    </entry>
+    <entry name="TOTEM">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="SWAP">50</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="TOOL_ID">TOTEM</option>
+      <option name="AGGREGATE">TOTEM</option>
+    </entry>
+    <entry name="TRACEABILITY_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="TRACEABILITY_INTERACTIVE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">&quot;batch&quot;</option>
+    </entry>
+    <entry name="ULTRASIM">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="ULTRASIM_64bit">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="VERDI">
+      <option name="LICENSE">
+        <member>LIC_verdi=1</member>
+      </option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="VERDI_BATCH">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="VMANAGER">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="VSCODE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="UI">code</option>
+      <option name="TOOL_ID">VSCode</option>
+    </entry>
+    <entry name="WICKED">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">INWAY_WICKED</option>
+      <option name="AGGREGATE">INWAY_WICKED</option>
+    </entry>
+    <entry name="WOTAN">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+      <option name="RAM">500</option>
+    </entry>
+    <entry name="Waveview_64">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">Waveview_64</option>
+    </entry>
+    <entry name="XA">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">XA</option>
+    </entry>
+    <entry name="XA_64">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="TOOL_ID">XA_64</option>
+    </entry>
+    <entry name="XCELIUM">
+      <option name="LICENSE">
+        <member>LIC_xcelium=1</member>
+      </option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="XCELIUM_BATCH">
+      <option name="LICENSE">
+        <member>LIC_xcelium=1</member>
+      </option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="XCELIUM_COMPILE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="XCELIUM_ELABORATE">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="XCELIUM_IMC">
+      <option name="LS_SYSTEM">LSF</option>
+    </entry>
+    <entry name="XCELIUM_INDAGO">
+      <option name="LICENSE">
+        <member>LIC_xcelium=1</member>
+        <member>LIC_indago=1</member>
+      </option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="UI">XCELIUM</option>
+    </entry>
+    <entry name="XCELIUM_XPROF">
+      <option name="LS_SYSTEM">LSF</option>
+    </entry>
+	<entry name="XPDF">
+	  <option name="LS_SYSTEM">LSF</option>
+	  <option name="UI">xpdf</option>
+	</entry>
+    <entry name="XPDF_READER">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="FORCE_LOCAL">1</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="XPROF">
+      <option name="LICENSE">
+        <member>LIC_xcelium=1</member>
+      </option>
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="UI">XCELIUM_XPROF</option>
+    </entry>
+    <entry name="ate2fs">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="bsdarchitect">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_bscanarchitect=1</member>
+      </option>
+    </entry>
+    <entry name="comet">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="fake_dcmake">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="RAM">500</option>
+      <option name="QUEUE">batch</option>
+      <option name="FORCE_LOCAL">0</option>
+    </entry>
+    <entry name="fastscan">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_fastscan=1</member>
+      </option>
+    </entry>
+    <entry name="fastscan_32">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_fastscan=1</member>
+      </option>
+    </entry>
+    <entry name="fastscan_32_interactive">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_fastscan=1</member>
+      </option>
+    </entry>
+    <entry name="fastscan_64">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_fastscan=1</member>
+      </option>
+    </entry>
+    <entry name="fastscan_64_interactive">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_fastscan=1</member>
+      </option>
+    </entry>
+    <entry name="fs2ff">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="matlab">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="metagen">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="systemc">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="systemc_ams">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+    </entry>
+    <entry name="testkompress">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_testkomp=1</member>
+      </option>
+    </entry>
+    <entry name="testkompress_32">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_testkomp=1</member>
+      </option>
+    </entry>
+    <entry name="testkompress_32_interactive">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_testkomp=1</member>
+      </option>
+    </entry>
+    <entry name="testkompress_64">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_testkomp=1</member>
+      </option>
+    </entry>
+    <entry name="testkompress_64_interactive">
+      <option name="LS_SYSTEM">LSF</option>
+      <option name="QUEUE">batch</option>
+      <option name="LICENSE">
+        <member>LIC_testkomp=1</member>
+      </option>
+    </entry>
+  </job_def>
+  <!-- ===================================== -->
+  <!-- Site Def section                      -->
+  <!-- ===================================== -->
+  <site_def>
+    <definition name="CLEARCASE">clearcase</definition>
+    <definition name="ENABLE_PRJGATE_CHECK">1</definition>
+    <definition name="LIC_Affirma_NC_Simulator_rusage">Affirma_NC_Simulator=%d:duration=10</definition>
+    <definition name="LIC_Denali_MMAV_2003_std_rusage">Denali_MMAV_2003_std=%d:duration=10</definition>
+    <definition name="LIC_Denali_Memory_Maker_rusage">Denali_Memory_Maker=%d:duration=10</definition>
+    <definition name="LIC_Denali_SIM_full_2000_rusage">Denali_SIM_full_2000=%d:duration=10</definition>
+    <definition name="LIC_Design_Compiler_rusage">Design_Compiler=%d:duration=10</definition>
+    <definition name="LIC_PrimeTime_SI_rusage">PrimeTime_SI=%d:duration=10</definition>
+    <definition name="LIC_PrimeTime_ADV_rusage">PrimeTime_ADV=%d:duration=10</definition>
+    <definition name="LIC_PrimeTime_PX_rusage">PrimeTime_PX=%d:duration=10</definition>
+    <definition name="LIC_PrimeTime_rusage">PrimeTime=%d:duration=10</definition>
+    <definition name="LIC_SW6012_90_rusage">SW6012_90=%d:duration=10</definition>
+    <definition name="LIC_SpecmanModelsim_rusage">specman=%d:duration=2,qhsimvh=%d:duration=2 || specman=%d:duration=2,msimhdlsim=%d:duration=2</definition>
+    <definition name="LIC_advantest_rusage">advantest=%d:duration=10</definition>
+    <definition name="LIC_armads_rusage">armads=%d:duration=10</definition>
+    <definition name="LIC_bscanarchitect_rusage">lic_bscanarchitect=%d:duration=2</definition>
+    <definition name="LIC_calibredrc_rusage">lic_calibredrc=%d:duration=2</definition>
+    <definition name="LIC_calibrehdrc_rusage">lic_calibrehdrc=%d:duration=2</definition>
+    <definition name="LIC_calibrehlvs_rusage">lic_calibrehlvs=%d:duration=2</definition>
+    <definition name="LIC_calibrelvs_rusage">lic_calibrelvs=%d:duration=2</definition>
+    <definition name="LIC_evc_verisity_ahb_rusage">evc_verisity_ahb=%d:duration=10</definition>
+    <definition name="LIC_fastscan_rusage">fastscan=%d:duration=2</definition>
+    <definition name="LIC_galaxypnr_rusage">lic_snps_iccompiler=%d:duration=2</definition>
+    <definition name="LIC_i_am_slow">
+      <member name="select">slowlic&gt;=%d</member>
+      <member name="rusage">slowlic=%d:duration=10</member>
+      <member name="span">hosts=1</member>
+      <member name="bsub">-E preexecscript</member>
+    </definition>
+    <definition name="LIC_iccompiler4_rusage">lic_ICCompilerII_4=%d:duration=2</definition>
+    <definition name="LIC_iccompiler8_rusage">lic_ICCompilerII_8=%d:duration=2</definition>
+    <definition name="LIC_mbistarchitect_rusage">lic_mbistarchitect=%d:duration=2</definition>
+    <definition name="LIC_msimhdlmix_rusage">msimhdlmix=%d:duration=2</definition>
+    <definition name="LIC_msimhdlsim_rusage">msimhdlsim=%d:duration=2</definition>
+    <definition name="LIC_ncsim_rusage">lic_ncsim=%d:duration=2</definition>
+    <definition name="LIC_oemunlock_rusage">lic_oemunlock=%d:duration=2</definition>
+    <definition name="LIC_qhsimvh_rusage">qhsimvh=%d:duration=2</definition>
+    <definition name="LIC_qhsimvl_rusage">qhsimvl=%d:duration=2</definition>
+    <definition name="LIC_specman_rusage">specman=%d:duration=10</definition>
+    <definition name="LIC_spectre_rusage">lic_cds_spectre=%d:duration=2</definition>
+    <definition name="LIC_talusdesign_rusage">lic_magma_talus_design=%d:duration=2</definition>
+    <definition name="LIC_talusvortex_rusage">lic_magma_talus_vortex=%d:duration=2</definition>
+    <definition name="LIC_testkomp_rusage">lic_testkomp=%d:duration=2</definition>
+    <definition name="LIC_titan_rusage">lic_infineon_titan=%d:duration=2</definition>
+    <definition name="LIC_verdi_rusage">lic_debussy_verdi=%d:duration=2</definition>
+    <definition name="LIC_xcelium_rusage">lic_xcelium=%d:duration=2</definition>
+    <definition name="LIC_indago_rusage">lic_indago=%d:duration=2</definition>
+    <definition filter="LSF" name="LS_AGGREGATE_ENV">IFX_AGGREGATE_JOBNAMES</definition>
+    <definition filter="LSF" name="LS_BLAUNCH">blaunch</definition>
+    <definition filter="LSF" name="LS_CMD_CUSTOM">bsub -I</definition>
+    <definition filter="LSF" name="LS_CMD_DISPATCH">bsub</definition>
+    <definition filter="LSF" name="LS_CMD_INTERACTIVE">bsub -Is</definition>
+    <definition filter="LSF" name="LS_CMD_INTERACTIVE_EXEC">bsub -Is</definition>
+    <definition filter="LSF" name="LS_CMD_SHELL">bsub -Is</definition>
+    <definition filter="LSF" name="LS_KILL">bkill</definition>
+    <definition name="LS_MODULE_LSF">lsf</definition>
+    <definition filter="LSF" name="LS_RESERVE_RAM">mem=%d:duration=%d:decay=%d</definition>
+    <definition filter="LSF" name="LS_RES_RAM">mem &gt;= %d</definition>
+    <definition filter="LSF" name="LS_RES_SWAP">swp&gt;=%d</definition>
+    <definition filter="LSF" name="LS_RES_TMPSPACE">tmp2&gt;=%d</definition>
+    <definition name="OS_TYPE">type == %s</definition>
+    <definition name="OS_VERSION">osrel==%s</definition>
+    <definition name="UI_format">TOOLNAME:TOOLVER@FLOW:FLOWVER</definition>
+  </site_def>
+</ls_config>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<setup fileversion="1.1">
+  <dmconfig type="ClioSoft">
+    <module name="cliosoft/7"/>
+  </dmconfig>
+  <repository type="NoDm" primary="1" id="nodm" root="/home/iwinfratest/zNoDM_Clio/nodm"/>
+  <repository type="ClioSoft" primary="0" id="cliosoft" sosserver="iwinfratest" sosproject="clio_padma_repo1" multisite="1"/>
+  <repository type="ClioSoft" primary="0" id="cliosoft0" sosserver="iwinfratest" sosproject="clio_padma_repo1" multisite="1"/>
+  <workspace id="default" type="private" comment="">
+    <ClioSoft>
+      <repository id="cliosoft" name='data' root="/home/iwinfratest/zNoDM_Clio/cliosoft/cliosoft.[user].default" config_file="/home/iwinfratest/zNoDM_Clio/workspaces/default/ClioSoft"/>
+      <repository id="cliosoft0" name='data' root="/home/iwinfratest/zNoDM_Clio/cliosoft/cliosoft0.[user].default" config_file="/home/iwinfratest/zNoDM_Clio/workspaces/default/ClioSoft"/>
+    </ClioSoft>
+    <NoDm>
+      <repository id="nodm" name='data' root="/home/iwinfratest/zNoDM_Clio/nodm/default"/>
+      <repository id="nodm" name='data1' root="/home/iwinfratest/zNoDM_Clio/nodm/default1"/>
+    </NoDm>
+  </workspace>
+  <workspace id="ws1" type="private" comment="">
+    <ClioSoft>
+      <repository id="cliosoft"  name='data' root="/home/iwinfratest/zNoDM_Clio/cliosoft/cliosoft.[user].ws1" config_file="/home/iwinfratest/zNoDM_Clio/workspaces/ws1/ClioSoft"/>
+      <repository id="cliosoft0"  name='data' root="/home/iwinfratest/zNoDM_Clio/cliosoft/cliosoft0.[user].ws1" config_file="/home/iwinfratest/zNoDM_Clio/workspaces/ws1/ClioSoft"/>
+    </ClioSoft>
+    <NoDm>
+      <repository id="nodm" name='data' root="/home/iwinfratest/zNoDM_Clio/nodm/ws1"/>
+    </NoDm>
+  </workspace>
+</setup>
